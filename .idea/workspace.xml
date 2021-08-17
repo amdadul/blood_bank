@@ -129,12 +129,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel\bloodbank\public" />
       <recent name="C:\xampp\htdocs\laravel\bloodbank" />
     </key>
   </component>
@@ -153,7 +154,7 @@
       <option name="presentableId" value="Default" />
       <updated>1629134553384</updated>
       <workItem from="1629134554493" duration="1590000" />
-      <workItem from="1629215376639" duration="9754000" />
+      <workItem from="1629215376639" duration="12622000" />
     </task>
     <servers />
   </component>
@@ -165,6 +166,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1629223026212" />
+    <state x="517" y="292" key="NewPhpFileDialog" timestamp="1629226683266">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="517" y="292" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1629226683266" />
     <state x="339" y="167" width="672" height="677" key="run.anything.popup" timestamp="1629220242127">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
