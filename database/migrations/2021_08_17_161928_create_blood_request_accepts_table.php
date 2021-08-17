@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePoliceStationsTable extends Migration
+class CreateBloodRequestAcceptsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreatePoliceStationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('police_stations', function (Blueprint $table) {
+        Schema::create('blood_request_accepts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('district_id');
-            $table->foreign('district_id')->references('id')->on('districts');
-            $table->string('name');
+            $table->unsignedBigInteger('request_id');
+            $table->foreign('request_id')->references('id')->on('blood_requests');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->boolean('status');
             $table->timestamps();
         });
@@ -30,6 +31,6 @@ class CreatePoliceStationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('police_stations');
+        Schema::dropIfExists('blood_request_accepts');
     }
 }

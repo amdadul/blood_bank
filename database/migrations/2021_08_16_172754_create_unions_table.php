@@ -15,6 +15,10 @@ class CreateUnionsTable extends Migration
     {
         Schema::create('unions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('post_office_id');
+            $table->foreign('post_office_id')->references('id')->on('post_offices');
+            $table->string('name');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
