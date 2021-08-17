@@ -17,14 +17,13 @@ class UsersTableSeeder extends Seeder
             'mobile'     =>  '01740929512',
             'user_type'     =>  'admin',
             'password'  =>  bcrypt('admin'),
-        ]);
-
-        \App\User::create([
-            'name'      =>  'User',
-            'email'     =>  'user@admin.com',
-            'mobile'     =>  '01571753214',
-            'user_type'     =>  'user',
-            'password'  =>  bcrypt('user'),
-        ]);
+        ],
+            [
+                'name'      =>  'User',
+                'email'     =>  'user@admin.com',
+                'mobile'     =>  '01571753214',
+                'user_type'     =>  'user',
+                'password'  =>  bcrypt('user'),
+            ]);
     }
 }
