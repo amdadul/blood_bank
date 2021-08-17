@@ -36,4 +36,34 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function donor()
+    {
+        return $this->belongsTo(Donor::class);
+    }
+
+    public function bloodRequest()
+    {
+        return $this->hasMany(BloodRequest::class);
+    }
+
+    public function bloodRequestAccept()
+    {
+        return $this->hasMany(BloodRequestAccept::class);
+    }
+
+    public function feedBack()
+    {
+        return $this->hasMany(FeedBack::class);
+    }
+
+    public function reviewer()
+    {
+        return $this->hasMany(FeedBack::class);
+    }
+
+    public function history()
+    {
+        return $this->hasMany(Histories::class);
+    }
 }

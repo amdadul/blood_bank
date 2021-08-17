@@ -6,5 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class BloodRequest extends Model
 {
-    //
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function union()
+    {
+        return $this->belongsTo(Union::class);
+    }
+
+    public function bloodRequestAccept()
+    {
+        return $this->hasMany(BloodRequestAccept::class);
+    }
+
+    public function history()
+    {
+        return $this->hasMany(Histories::class);
+    }
 }
