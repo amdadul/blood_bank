@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Union extends Model
 {
+    protected $guarded=[];
+
     public function postOffice()
     {
         return $this->belongsTo(PostOffice::class);

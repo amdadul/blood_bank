@@ -20,8 +20,18 @@ Route::get('/', function () {
 
 Route::get('/login', 'UserController@login')->name('login');
 Route::post('/login', 'UserController@loginAttempt')->name('login.attempt');
+Route::post('/logout', 'UserController@logout')->name('logout');
 Route::get('/register', 'UserController@register')->name('register');
-Route::post('/register', 'UserController@registerStore')->name('register.store');
+Route::post('/registered', 'UserController@registerStore')->name('register.store');
+
+
+Route::group(['prefix' => 'api'], function () {
+    Route::post('/police-station', 'PoliceStationController@getPoliceStationName')->name('police.station.name');
+    Route::post('/post-office', 'PostOfficeController@getPostOfficeName')->name('post.office.name');
+    Route::post('/union', 'UnionController@getUnionName')->name('union.name');
+});
+
+
 Route::group(['prefix' => 'admin/'], function () {
     Route::get('/login', 'UserController@adminLogin')->name('admin.login');
 });
