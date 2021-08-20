@@ -22,7 +22,7 @@ Route::get('/login', 'UserController@login')->name('login');
 Route::post('/login', 'UserController@loginAttempt')->name('login.attempt');
 Route::post('/logout', 'UserController@logout')->name('logout');
 Route::get('/register', 'UserController@register')->name('register');
-Route::post('/registered', 'UserController@registerStore')->name('register.store');
+Route::post('/register-store', 'UserController@registerStore')->name('register.store');
 
 
 Route::group(['prefix' => 'api'], function () {
@@ -36,10 +36,9 @@ Route::group(['prefix' => 'admin/'], function () {
     Route::get('/login', 'UserController@adminLogin')->name('admin.login');
 });
 
-Route::group(['middleware' => ['auth:web']], function () {
-
-});
-
 Route::group(['middleware' => ['auth:user']], function () {
     Route::get('/dashboard', 'HomeController@index')->name('user.dashboard');
+    Route::get('/blood-request', 'BloodRequestController@bloodRequest')->name('user.blood.request');
+    Route::post('/blood-request-store', 'BloodRequestController@bloodRequestStore')->name('user.blood.request.store');
+    Route::get('mail/send', 'BloodRequestController@send');
 });
