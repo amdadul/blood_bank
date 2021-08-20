@@ -23,7 +23,11 @@
     <!-- END VENDOR CSS-->
     <!-- BEGIN STACK CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/extensions/toastr.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/plugins/extensions/toastr.css') }}">
     <!-- END STACK CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/custom-style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/jquery-ui.min.css')}}">
     <!-- BEGIN Page Level CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/core/colors/palette-gradient.css')}}">
@@ -58,21 +62,25 @@
 <!-- BEGIN VENDOR JS-->
 <script src="{{ asset('app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
 <!-- BEGIN VENDOR JS-->
+<script src="{{ asset('app-assets/vendors/js/ui/jquery.sticky.js') }}" type="text/javascript"></script>
 <!-- BEGIN PAGE VENDOR JS-->
 <script src="{{ asset('app-assets/vendors/js/charts/raphael-min.js')}}" type="text/javascript"></script>
 <script src="{{ asset('app-assets/vendors/js/charts/morris.min.js')}}" type="text/javascript"></script>
 <script src="{{ asset('app-assets/vendors/js/extensions/unslider-min.js')}}" type="text/javascript"></script>
 <script src="{{ asset('app-assets/vendors/js/timeline/horizontal-timeline.js')}}" type="text/javascript"></script>
 <!-- END PAGE VENDOR JS-->
+
+
 <!-- BEGIN STACK JS-->
 <script src="{{ asset('app-assets/js/core/app-menu.js')}}" type="text/javascript"></script>
 <script src="{{ asset('app-assets/js/core/app.js')}}" type="text/javascript"></script>
 <script src="{{ asset('app-assets/js/scripts/customizer.js')}}" type="text/javascript"></script>
+<script src="{{ asset('app-assets/vendors/js/extensions/toastr.min.js') }}" type="text/javascript"></script>
 <!-- END STACK JS-->
 <!-- BEGIN PAGE LEVEL JS-->
 <script src="{{ asset('app-assets/js/scripts/pages/dashboard-ecommerce.js')}}" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
-
+<script src="{{asset('js/jquery-ui.min.js')}}" type="text/javascript"></script>
 @stack('scripts')
 </body>
 </html>

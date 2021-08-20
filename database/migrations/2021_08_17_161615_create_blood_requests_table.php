@@ -28,7 +28,7 @@ class CreateBloodRequestsTable extends Migration
             $table->time('time_frame')->nullable();
             $table->tinyInteger('blood_group_id');
             $table->boolean('emergency');
-            $table->boolean('managed');
+            $table->boolean('managed')->default(0);
             $table->timestamps();
         });
     }

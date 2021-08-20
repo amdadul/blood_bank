@@ -349,6 +349,8 @@
     })
 
     $('.date').datetimepicker({});
+
+    $('#timepicker1').timepicker();
 </script>
 <script>
 
