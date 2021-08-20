@@ -15,7 +15,7 @@ class CreateHistoriesTable extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('request_id');
+            $table->unsignedBigInteger('request_id')->nullable();
             $table->foreign('request_id')->references('id')->on('blood_requests');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

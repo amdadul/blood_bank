@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\BloodRequest;
 use App\District;
 use App\Donor;
+use App\Histories;
 use App\Lookup;
 use Illuminate\Http\Request;
 use App\Mail\MailSender;
@@ -55,8 +56,11 @@ class BloodRequestController extends Controller
             'union' => 'required',
         ]);
 
+        $em = $request->emergency=='ON'?1:0;
+        $user_id = auth()->user()->id;
+
         $bloodRequest = new BloodRequest();
-        $bloodRequest->user_id = auth()->user()->id;
+        $bloodRequest->user_id = $user_id;
         $bloodRequest->details = $request->details?$request->details:'';
         $bloodRequest->union_id = $request->union;
         $bloodRequest->hospital_name = $request->hospital_name;
@@ -66,12 +70,19 @@ class BloodRequestController extends Controller
         $bloodRequest->donation_date = $request->date;
         $bloodRequest->time_frame = $request->time;
         $bloodRequest->blood_group_id = $request->blood_group;
-        $bloodRequest->emergency = $request->emergency?$request->emergency:0;
+        $bloodRequest->emergency = $em;
 
         if($bloodRequest->save())
         {
-            $donors = Donor::where('union_id','=',$request->union)->get();
+            $donors = Donor::where('union_id','=',$request->union)->where('blood_group_id','=',$request->blood_group)->get();
             $bloodGroup = Lookup::getName('blood_group',$bloodRequest->blood_group_id);
+
+            $history = new Histories();
+            $history->request_id = $bloodRequest->id;
+            $history->user_id = auth()->user()->id;
+            $history->activity_id = Lookup::REQUEST;
+            $history->status = 1;
+            $history->save();
 
             $mailInfo = new \stdClass();
             $mailInfo->blood_group = $bloodGroup;
@@ -88,7 +99,8 @@ class BloodRequestController extends Controller
 
                 $this->send($mailInfo,$mailTo);
             }
-            DB::table('donors')->increment('request_count');
+
+            Donor::where('user_id','=',$user_id)->first()->increment('request_count');
 
             return redirect()->back();
 

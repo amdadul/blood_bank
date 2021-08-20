@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\District;
 use App\Donor;
+use App\Histories;
 use App\Lookup;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -40,6 +41,13 @@ class UserController extends Controller
 
         if (auth()->guard('user')->attempt($credentials)) {
             $user =  auth()->guard('user')->user();
+
+            $history = new Histories();
+            $history->user_id = $user->id;
+            $history->activity_id = Lookup::LOGIN;
+            $history->status = 1;
+            $history->save();
+
             return redirect()->route('user.dashboard');
         } else {
             return response()->json([
@@ -53,6 +61,12 @@ class UserController extends Controller
 
     public function logout(Request $request)
     {
+        $history = new Histories();
+        $history->user_id = auth()->guard('user')->user()->id;
+        $history->activity_id = Lookup::lOGOUT;
+        $history->status = 1;
+        $history->save();
+
         auth()->guard('user')->logout();
         $request->session()->invalidate();
         return redirect('/login');
@@ -93,6 +107,13 @@ class UserController extends Controller
         $user->user_type = 'user';
         if($user->save())
         {
+            $history = new Histories();
+            $history->user_id = $user->id;
+            $history->activity_id = Lookup::REGISTER;
+            $history->status = 1;
+            $history->save();
+
+
             $donor->user_id = $user->id;
             $donor->alt_mobile_no = $request->alt_mobile_no?$request->alt_mobile_no:'';
             $donor->union_id = $request->union;
@@ -104,6 +125,7 @@ class UserController extends Controller
             $donor->dob = $request->dob;
             if($donor->save())
             {
+
                 session()->flash('success', 'Registration Completed Successfully');
                 return redirect(route('login'));
             }

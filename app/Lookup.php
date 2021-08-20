@@ -9,6 +9,12 @@ class Lookup extends Model
     protected $table = 'lookups';
     protected $guarded = [];
 
+    const LOGIN = 2;
+    const lOGOUT = 5;
+    const REGISTER = 1;
+    const REQUEST = 3;
+    const DONATE = 4;
+
     public static function loadItems($type)
     {
         return Lookup::where('type','=',$type)->get();
