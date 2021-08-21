@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function donor()
     {
-        return $this->belongsTo(Donor::class);
+        return $this->belongsTo(Donor::class,'user_id');
     }
 
     public function bloodRequest()
