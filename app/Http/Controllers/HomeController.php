@@ -33,10 +33,14 @@ class HomeController extends Controller
                     ->where('activity_id','=',Lookup::DONATE)
                     ->orderBy('created_at','DESC')
                     ->first();
-        $from = $history->created_at;
-        $today = date('Y-m-d');
-        $diff = strtotime($from) - strtotime($today);
-        $days = ceil(abs($diff / 86400)+1);
+        if($history) {
+            $from = $history->created_at;
+            $today = date('Y-m-d');
+            $diff = strtotime($from) - strtotime($today);
+            $days = ceil(abs($diff / 86400) + 1);
+        }else{
+            $days = 0;
+        }
 
         $groupName = Lookup::getName('blood_group',$bloodGroup->blood_group_id);
 
