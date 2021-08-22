@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\BloodRequest;
+use App\BloodRequestAccept;
 use App\District;
 use App\Donor;
 use App\Histories;
@@ -20,6 +21,56 @@ class BloodRequestController extends Controller
         $relationships = Lookup::loadItems('relation');
         $districts = District::all();
         return view('users.blood_request',compact('blood_groups','relationships','districts'));
+    }
+
+    public function bloodRequestView($id)
+    {
+        $userId = auth()->user()->id;
+        $history = Histories::where('user_id','=',$userId)
+            ->where('activity_id','=',Lookup::DONATE)
+            ->orderBy('created_at','DESC')
+            ->first();
+        if($history) {
+            $from = $history->created_at;
+            $today = date('Y-m-d');
+            $diff = strtotime($from) - strtotime($today);
+            $days = ceil(abs($diff / 86400) + 1);
+        }else{
+            $days = 0;
+        }
+
+        $bloodRequest = BloodRequest::find($id);
+        return view('users.blood_request_view',compact('bloodRequest','days'));
+    }
+
+    public function bloodRequestAccept($id)
+    {
+        $bloodRequest = BloodRequest::find($id);
+        if($bloodRequest->managed==0)
+        {
+            $userId = auth()->user()->id;
+            $requestAccept = new BloodRequestAccept();
+            $requestAccept->request_id = $id;
+            $requestAccept->user_id = $userId;
+            $requestAccept->status = 1;
+            if ($requestAccept->save())
+            {
+                if(BloodRequestAccept::Managed($id))
+                {
+                    $bloodRequest->increment('managed');
+                }
+                session()->flash('success','Blood request accepted successfully');
+            }
+            else {
+                session()->flash('error', 'error occurred');
+            }
+        }
+        else
+        {
+            session()->flash('error', 'Blood Already Managed');
+        }
+
+        return redirect()->back();
     }
 
     public function send($mailInfo,$mailTo)

@@ -75,7 +75,7 @@
                     <div class="col-md-3 col-sm-12">
                         <div class="card">
                             <div class="card-header" style="border-bottom: 1px solid silver">
-                                <h4 class="card-title" id="heading-labels"><i class="fa fa-user" aria-hidden="true"></i> {{$bloodRequest->user->name}}</h4>
+                                <h4 class="card-title" id="heading-labels"><a href="{{route('request.view',$bloodRequest->id)}}"> <i class="fa fa-user" aria-hidden="true"></i> {{$bloodRequest->user->name}}</a></h4>
                                 <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <span class="badge badge-default" style="color:red;font-size: 14px;font-weight: bold; "> <i class="fa fa-tint" aria-hidden="true" ></i> {{\App\Lookup::getName('blood_group',$bloodRequest->blood_group_id)}} </span>

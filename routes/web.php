@@ -40,5 +40,6 @@ Route::group(['middleware' => ['auth:user']], function () {
     Route::get('/dashboard', 'HomeController@index')->name('user.dashboard');
     Route::get('/blood-request', 'BloodRequestController@bloodRequest')->name('user.blood.request');
     Route::post('/blood-request-store', 'BloodRequestController@bloodRequestStore')->name('user.blood.request.store');
-    Route::get('mail/send', 'BloodRequestController@send');
+    Route::get('/{id}/blood-request-view', 'BloodRequestController@bloodRequestView')->name('request.view');
+    Route::get('/{id}/blood-request-accept', 'BloodRequestController@bloodRequestAccept')->name('request.accept');
 });

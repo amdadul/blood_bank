@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f697b476-7022-414e-8a33-e2d4eef364da" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/users/blood_request_view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/BloodRequestAccept.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BloodRequestAccept.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BloodRequestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BloodRequestController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,12 +140,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/users" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel\bloodbank\resources\views\users" />
       <recent name="C:\xampp\htdocs\laravel\bloodbank\public" />
       <recent name="C:\xampp\htdocs\laravel\bloodbank" />
     </key>
@@ -166,7 +172,8 @@
       <workItem from="1629448280541" duration="13967000" />
       <workItem from="1629471886598" duration="9772000" />
       <workItem from="1629561077952" duration="10007000" />
-      <workItem from="1629571244335" duration="249000" />
+      <workItem from="1629571244335" duration="454000" />
+      <workItem from="1629646641662" duration="5519000" />
     </task>
     <servers />
   </component>
@@ -190,9 +197,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="167" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1629565252108" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1629218044454">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1629651396382">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1629218044454" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1629651396382" />
   </component>
 </project>

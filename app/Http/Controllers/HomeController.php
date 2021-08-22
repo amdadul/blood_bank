@@ -45,8 +45,10 @@ class HomeController extends Controller
         $groupName = Lookup::getName('blood_group',$bloodGroup->blood_group_id);
 
         $bloodRequests = BloodRequest::with('user')
-            ->where('blood_requests.blood_group_id','=',$bloodGroup->blood_group_id)
+            ->select('blood_requests.*')
             ->join('donors as d', 'd.user_id', '=', 'blood_requests.user_id')
+            ->where('blood_requests.blood_group_id','=',$bloodGroup->blood_group_id)
+            ->where('blood_requests.union_id','=',$bloodGroup->union_id)
             ->orderBy('d.donation_count', 'desc')->get();
         $requestCount = count($bloodRequests);
         return view('users.dashboard',compact('bloodRequests','requestCount','days','groupName'));
