@@ -32,7 +32,7 @@
 
         <div class=" ">
             <div class="row">
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-8 col-sm-12">
                     <div class="card">
                         <div class="card-header" style="border-bottom: 1px solid silver">
                             <h4 class="card-title" id="heading-labels"><i class="fa fa-user"
@@ -50,6 +50,7 @@
                             <h4 class="card-title"><i class="fa fa-medkit"
                                                       aria-hidden="true"></i> {{$bloodRequest->hospital_name}}</h4>
                             <p class="card-text"> {{$bloodRequest->details}}</p>
+                            <p class="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$bloodRequest->union->name.' , '.$bloodRequest->union->postOffice->policeStation->name.' , '.$bloodRequest->union->postOffice->policeStation->district->name}}</p>
                             <p class="card-text"><i class="fa fa-calendar"
                                                     aria-hidden="true"></i> {{$bloodRequest->donation_date}}   {{date('h:i:s a', strtotime($bloodRequest->time_frame))}}
                             </p>

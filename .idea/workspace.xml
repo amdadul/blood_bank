@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f697b476-7022-414e-8a33-e2d4eef364da" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/users/blood_request_view.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admins/dashboard.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admins/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/users/history.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/BloodRequestAccept.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BloodRequestAccept.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/BloodRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BloodRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Histories.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Histories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BloodRequestAcceptController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BloodRequestAcceptController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BloodRequestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BloodRequestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HistoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HistoriesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Lookup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Lookup.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/master/left_menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master/left_menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/blood_request.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/blood_request.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/blood_request_view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/blood_request_view.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/users/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,6 +158,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\laravel\bloodbank\resources\views\users" />
+      <recent name="C:\xampp\htdocs\laravel\bloodbank\resources\views\admins" />
       <recent name="C:\xampp\htdocs\laravel\bloodbank\public" />
       <recent name="C:\xampp\htdocs\laravel\bloodbank" />
     </key>
@@ -173,7 +185,7 @@
       <workItem from="1629471886598" duration="9772000" />
       <workItem from="1629561077952" duration="10007000" />
       <workItem from="1629571244335" duration="454000" />
-      <workItem from="1629646641662" duration="5519000" />
+      <workItem from="1629646641662" duration="10276000" />
     </task>
     <servers />
   </component>
@@ -181,10 +193,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1629562346740">
+    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1629652532955">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1629562346740" />
+    <state x="413" y="124" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.738@0.0.1366.738" timestamp="1629652532955" />
     <state x="517" y="292" key="NewPhpFileDialog" timestamp="1629226683266">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

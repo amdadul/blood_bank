@@ -15,6 +15,6 @@ class Histories extends Model
 
     public function bloodRequest()
     {
-        return $this->belongsTo(BloodRequest::class);
+        return $this->belongsTo(BloodRequest::class,'request_id','id');
     }
 }

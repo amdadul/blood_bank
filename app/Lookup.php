@@ -14,6 +14,7 @@ class Lookup extends Model
     const REGISTER = 1;
     const REQUEST = 3;
     const DONATE = 4;
+    const ACCEPT = 6;
 
     public static function loadItems($type)
     {

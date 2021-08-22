@@ -37,12 +37,6 @@
 </head>
 <body class="vertical-layout  fixed-navbar"
       data-open="click" data-menu="vertical-menu" data-col="2-columns">
-@if(session()->has('success'))
-    <div class="alert alert-success">{{ session('success') }}</div>
-@endif
-@if(session()->has('error'))
-    <div class="alert alert-success">{{ session('error') }}</div>
-@endif
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-header row">
@@ -55,7 +49,7 @@
                     <div class="card-header">{{ __('User Login') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login.attempt') }}">
+                        <form method="POST" action="{{ route('admin.login.attempt') }}">
                             @csrf
 
                             <div class="form-group row">
@@ -104,7 +98,7 @@
                                         {{ __('Login') }}
                                     </button>
                                     <a class="btn btn-link" href="{{ route('register') }}">
-                                        {{ __('Register Here') }}
+                                        {{ __('Register as user') }}
                                     </a>
 
                                     @if (Route::has('password.request'))

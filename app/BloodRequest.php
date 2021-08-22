@@ -15,7 +15,7 @@ class BloodRequest extends Model
 
     public function union()
     {
-        return $this->belongsTo(Union::class);
+        return $this->belongsTo(Union::class,'union_id','id');
     }
 
     public function bloodRequestAccept()

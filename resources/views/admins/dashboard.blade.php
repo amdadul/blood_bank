@@ -85,7 +85,7 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title"><i class="fa fa-medkit" aria-hidden="true"></i> {{$bloodRequest->hospital_name}}</h4>
-                                <p class="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$bloodRequest->union->name.' , '.$bloodRequest->union->postOffice->policeStation->name.' , '.$bloodRequest->union->postOffice->policeStation->district->name}}</p>
+                                <p class="card-text"><i class="fa fa-info-circle" aria-hidden="true"></i> {{$bloodRequest->details}}</p>
                                 <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> {{$bloodRequest->donation_date}}   {{date('h:i:s a', strtotime($bloodRequest->time_frame))}}</p>
                                 @if($bloodRequest->emergency)
                                     <span class="badge badge-default badge-warning round"><i class="fa fa-bell" aria-hidden="true"></i> Emergency</span>

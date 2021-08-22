@@ -43,35 +43,7 @@ class BloodRequestController extends Controller
         return view('users.blood_request_view',compact('bloodRequest','days'));
     }
 
-    public function bloodRequestAccept($id)
-    {
-        $bloodRequest = BloodRequest::find($id);
-        if($bloodRequest->managed==0)
-        {
-            $userId = auth()->user()->id;
-            $requestAccept = new BloodRequestAccept();
-            $requestAccept->request_id = $id;
-            $requestAccept->user_id = $userId;
-            $requestAccept->status = 1;
-            if ($requestAccept->save())
-            {
-                if(BloodRequestAccept::Managed($id))
-                {
-                    $bloodRequest->increment('managed');
-                }
-                session()->flash('success','Blood request accepted successfully');
-            }
-            else {
-                session()->flash('error', 'error occurred');
-            }
-        }
-        else
-        {
-            session()->flash('error', 'Blood Already Managed');
-        }
 
-        return redirect()->back();
-    }
 
     public function send($mailInfo,$mailTo)
     {
@@ -107,7 +79,7 @@ class BloodRequestController extends Controller
             'union' => 'required',
         ]);
 
-        $em = $request->emergency=='ON'?1:0;
+        $em = $request->emergency==1?1:0;
         $user_id = auth()->user()->id;
 
         $bloodRequest = new BloodRequest();
@@ -153,12 +125,13 @@ class BloodRequestController extends Controller
 
             Donor::where('user_id','=',$user_id)->first()->increment('request_count');
 
-            return redirect()->back();
+            session()->flash('success','Blood request posted successfully');
 
         }
         else
         {
-            dd($request);
+            session()->flash('error','Error Occurred');
         }
+        return redirect()->back();
     }
 }

@@ -34,6 +34,13 @@ Route::group(['prefix' => 'api'], function () {
 
 Route::group(['prefix' => 'admin/'], function () {
     Route::get('/login', 'UserController@adminLogin')->name('admin.login');
+    Route::post('/login', 'UserController@adminLoginAttempt')->name('admin.login.attempt');
+});
+
+Route::group(['middleware' => ['auth:web']], function () {
+    Route::group(['prefix' => 'admin/'], function () {
+        Route::get('/dashboard', 'HomeController@adminIndex')->name('admins.dashboard');
+    });
 });
 
 Route::group(['middleware' => ['auth:user']], function () {
@@ -41,5 +48,6 @@ Route::group(['middleware' => ['auth:user']], function () {
     Route::get('/blood-request', 'BloodRequestController@bloodRequest')->name('user.blood.request');
     Route::post('/blood-request-store', 'BloodRequestController@bloodRequestStore')->name('user.blood.request.store');
     Route::get('/{id}/blood-request-view', 'BloodRequestController@bloodRequestView')->name('request.view');
-    Route::get('/{id}/blood-request-accept', 'BloodRequestController@bloodRequestAccept')->name('request.accept');
+    Route::get('/{id}/blood-request-accept', 'BloodRequestAcceptController@bloodRequestAccept')->name('request.accept');
+    Route::get('/user-history', 'HistoriesController@index')->name('user.history');
 });

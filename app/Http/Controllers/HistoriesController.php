@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Histories;
+use App\Lookup;
 use Illuminate\Http\Request;
 
 class HistoriesController extends Controller
@@ -14,7 +15,12 @@ class HistoriesController extends Controller
      */
     public function index()
     {
-        //
+        $userId = auth()->user()->id;
+        $donations = Histories::where('user_id','=',$userId)->where('activity_id','=',Lookup::DONATE)->get();
+        $takes = Histories::where('user_id','=',$userId)->where('activity_id','=',Lookup::REQUEST)->get();
+
+        return view('users.history',compact('donations','takes'));
+
     }
 
     /**

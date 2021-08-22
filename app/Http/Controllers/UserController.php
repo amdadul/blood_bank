@@ -26,6 +26,44 @@ class UserController extends Controller
         return view('users.login');
     }
 
+    public function adminLogin()
+    {
+        if(auth()->guard('web')->check()) {
+            return Redirect::route('admins.dashboard');
+        }
+        return view('admins.login');
+    }
+
+    public function adminLoginAttempt(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $credentials = [
+            'email' => $request->email,
+            'password' => $request->password,
+            'user_type' => 'admin'
+        ];
+
+        if (auth()->guard('web')->attempt($credentials)) {
+            $user =  auth()->guard('web')->user();
+
+            $history = new Histories();
+            $history->user_id = $user->id;
+            $history->activity_id = Lookup::LOGIN;
+            $history->status = 1;
+            $history->save();
+
+            return redirect()->route('admins.dashboard');
+        } else {
+            session()->flash('error','Email and password not match');
+            return redirect()->back();
+        }
+
+    }
+
     public function loginAttempt(Request $request)
     {
         $this->validate($request, [
@@ -50,11 +88,8 @@ class UserController extends Controller
 
             return redirect()->route('user.dashboard');
         } else {
-            return response()->json([
-                "success" => false,
-                "message" => "Email and password not match",
-                "error" => 'Email and password not match',
-            ], 401);
+            session()->flash('error','Email and password not match');
+            return redirect()->back();
         }
 
     }

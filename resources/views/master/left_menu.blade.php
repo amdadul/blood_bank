@@ -12,7 +12,7 @@
             <li class=" menu-item"><a href="{{route('user.blood.request')}}"><i class="ft-monitor"></i><span class="menu-title" data-i18n="">Request Blood</span></a>
 
             </li>
-            <li class=" menu-item"><a href="#"><i class="ft-layout"></i><span class="menu-title" data-i18n="">History</span></a>
+            <li class=" menu-item"><a href="{{route('user.history')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">History</span></a>
 
             </li>
             <li class=" menu-item"><a href="#"><i class="ft-zap"></i><span class="menu-title" data-i18n="">Profile</span></a>
