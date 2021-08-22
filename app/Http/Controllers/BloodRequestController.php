@@ -112,7 +112,7 @@ class BloodRequestController extends Controller
             $mailInfo->hospital = $bloodRequest->hospital_name;
             $mailInfo->date = $bloodRequest->donation_date;
             $mailInfo->mobile_no = $bloodRequest->mobile_no;
-            $mailInfo->url = '';
+            $mailInfo->url = $bloodRequest->id;
             $mailInfo->sender = auth()->user()->name;
 
             foreach($donors as $donor)

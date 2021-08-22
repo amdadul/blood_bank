@@ -7,6 +7,7 @@ Details:
     Donation Date: {{ $vmail->date }}
     Donation Location: {{ $vmail->hospital }}
     Mobile No: {{ $vmail->mobile_no }}
+    Click Here to accept:
 
 
 Thank You,

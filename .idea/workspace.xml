@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f697b476-7022-414e-8a33-e2d4eef364da" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/users/profile.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DonorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DonorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/master/left_menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master/left_menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BloodRequestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BloodRequestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mails/blood_request.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mails/blood_request.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mails/blood_request_plain.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mails/blood_request_plain.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/blood_request_view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/blood_request_view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/history.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/history.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +175,7 @@
       <workItem from="1629471886598" duration="9772000" />
       <workItem from="1629561077952" duration="10007000" />
       <workItem from="1629571244335" duration="454000" />
-      <workItem from="1629646641662" duration="12703000" />
+      <workItem from="1629646641662" duration="15278000" />
     </task>
     <servers />
   </component>
@@ -196,9 +199,9 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="167" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1629565252108" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1629651396382">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1629661910443">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1629651396382" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1629661910443" />
   </component>
 </project>

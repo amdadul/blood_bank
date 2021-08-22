@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title') {{ 'Dashboard' }} @endsection
+@section('title') {{ 'Blood Request View' }} @endsection
 
 @push('styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/forms/selects/select2.min.css')}}">
