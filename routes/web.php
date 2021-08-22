@@ -50,4 +50,5 @@ Route::group(['middleware' => ['auth:user']], function () {
     Route::get('/{id}/blood-request-view', 'BloodRequestController@bloodRequestView')->name('request.view');
     Route::get('/{id}/blood-request-accept', 'BloodRequestAcceptController@bloodRequestAccept')->name('request.accept');
     Route::get('/user-history', 'HistoriesController@index')->name('user.history');
+    Route::get('/user-profile', 'DonorController@index')->name('user.profile');
 });

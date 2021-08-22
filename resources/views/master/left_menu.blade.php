@@ -15,7 +15,7 @@
             <li class=" menu-item"><a href="{{route('user.history')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">History</span></a>
 
             </li>
-            <li class=" menu-item"><a href="#"><i class="ft-zap"></i><span class="menu-title" data-i18n="">Profile</span></a>
+            <li class=" menu-item"><a href="{{route('user.profile')}}"><i class="ft-zap"></i><span class="menu-title" data-i18n="">Profile</span></a>
 
             </li>
         </ul>
