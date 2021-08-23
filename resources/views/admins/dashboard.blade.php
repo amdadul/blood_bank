@@ -22,6 +22,12 @@
 @section('content')
 
     <section id="basic-form-layouts">
+        @if(session()->has('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        @if(session()->has('error'))
+            <div class="alert alert-success">{{ session('error') }}</div>
+        @endif
 
         <div class=" ">
             <div class="row">
@@ -70,6 +76,43 @@
                     </div>
                 </div>
             </div>
+
+            <h2>Request Accepted ( {{$acceptCount}} )</h2>
+            <div class="row" style="margin-bottom: 50px;">
+                @foreach($acceptRequests as $acceptRequest)
+                    @if(\App\BloodRequestAccept::isDonated($acceptRequest->request_id,$acceptRequest->user_id))
+
+                    @else
+                    <div class="col-md-3 col-sm-12">
+                        <div class="card">
+                            <div class="card-header" style="border-bottom: 1px solid silver">
+                                <h4 class="card-title" id="heading-labels"><a href="{{route('request.view',$acceptRequest->request_id)}}"> <i class="fa fa-user" aria-hidden="true"></i> {{$acceptRequest->bloodRequest->user->name}}</a></h4>
+                                <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <span class="badge badge-default" style="color:red;font-size: 14px;font-weight: bold; "> <i class="fa fa-tint" aria-hidden="true" ></i> {{\App\Lookup::getName('blood_group',$acceptRequest->bloodRequest->blood_group_id)}} </span>
+
+                                </div>
+
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fa fa-medkit" aria-hidden="true"></i> {{$acceptRequest->bloodRequest->hospital_name}}</h4>
+                                <p class="card-text"><i class="fa fa-info-circle" aria-hidden="true"></i> Accepted By {{$acceptRequest->user->name}}</p>
+                                <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> {{$acceptRequest->bloodRequest->donation_date}}   {{date('h:i:s a', strtotime($acceptRequest->bloodRequest->time_frame))}}</p>
+                            </div>
+                            <div class="card-footer">
+                                    <div class="col-md-6">
+                                        <a href="{{route('admins.donated',$acceptRequest->id)}}" class="btn btn-primary" > Donated
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                @endforeach
+            </div>
+
+            <h2>Request For Blood ( {{$requestCount}} )</h2>
             <div class="row">
                 @foreach($bloodRequests as $bloodRequest)
                     <div class="col-md-3 col-sm-12">

@@ -22,6 +22,12 @@
 @section('content')
 
     <section id="basic-form-layouts">
+        @if(session()->has('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        @if(session()->has('error'))
+            <div class="alert alert-success">{{ session('error') }}</div>
+        @endif
 
         <div class=" ">
             <div class="row">

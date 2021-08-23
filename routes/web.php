@@ -40,6 +40,7 @@ Route::group(['prefix' => 'admin/'], function () {
 Route::group(['middleware' => ['auth:web']], function () {
     Route::group(['prefix' => 'admin/'], function () {
         Route::get('/dashboard', 'HomeController@adminIndex')->name('admins.dashboard');
+        Route::get('{id}/donated', 'HistoriesController@donated')->name('admins.donated');
     });
 });
 

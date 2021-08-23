@@ -16,6 +16,15 @@ class BloodRequestAccept extends Model
         return count($accepted)==0?false:true;
     }
 
+    public static function isDonated($requestId,$userId)
+    {
+        $donated = Histories::where('request_id','=',$requestId)
+            ->where('user_id','=',$userId)
+            ->where('activity_id','=',Lookup::DONATE)
+            ->where('status','=',1)->get();
+        return count($donated)==0?false:true;
+    }
+
     public static function isManaged($requestId)
     {
         $managed = BloodRequestAccept::where('request_id','=',$requestId)
@@ -37,6 +46,6 @@ class BloodRequestAccept extends Model
 
     public function bloodRequest()
     {
-        return $this->belongsTo(BloodRequest::class);
+        return $this->belongsTo(BloodRequest::class,'request_id','id');
     }
 }

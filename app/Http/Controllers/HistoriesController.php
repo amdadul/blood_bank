@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BloodRequestAccept;
 use App\Histories;
 use App\Lookup;
 use Illuminate\Http\Request;
@@ -20,6 +21,29 @@ class HistoriesController extends Controller
         $takes = Histories::where('user_id','=',$userId)->where('activity_id','=',Lookup::REQUEST)->get();
 
         return view('users.history',compact('donations','takes'));
+
+    }
+
+    public function donated($id)
+    {
+        $requestAccepted = BloodRequestAccept::find($id);
+
+        $history = new Histories();
+        $history->request_id = $requestAccepted->request_id;
+        $history->user_id = $requestAccepted->user_id;
+        $history->activity_id = Lookup::DONATE;
+        $history->status = 1;
+
+        if($history->save())
+        {
+            $requestAccepted->decrement('status');
+            session()->flash('success','Blood donation posted successfully');
+        }
+        else
+        {
+            session()->flash('error','Error Occurred');
+        }
+        return redirect()->back();
 
     }
 

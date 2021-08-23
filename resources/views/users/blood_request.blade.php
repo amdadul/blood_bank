@@ -22,14 +22,14 @@
 @section('content')
 
     <section id="basic-form-layouts">
+        @if(session()->has('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        @if(session()->has('error'))
+            <div class="alert alert-success">{{ session('error') }}</div>
+        @endif
 
         <div class="d-flex justify-content-center">
-            @if(session()->has('success'))
-                <div class="alert alert-success">{{ session('success') }}</div>
-            @endif
-            @if(session()->has('error'))
-                <div class="alert alert-success">{{ session('error') }}</div>
-            @endif
 
             <div class="col-md-6">
                 <div class="card">

@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="f697b476-7022-414e-8a33-e2d4eef364da" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/BloodRequestAccept.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/BloodRequestAccept.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HistoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HistoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admins/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admins/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/blood_request.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/blood_request.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/history.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/history.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +178,7 @@
       <workItem from="1629561077952" duration="10007000" />
       <workItem from="1629571244335" duration="454000" />
       <workItem from="1629646641662" duration="15332000" />
-      <workItem from="1629732762431" duration="382000" />
+      <workItem from="1629732762431" duration="7473000" />
     </task>
     <servers />
   </component>

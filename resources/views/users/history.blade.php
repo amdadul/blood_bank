@@ -42,6 +42,8 @@
                             </div>
                         </div>
                         <div class="card-body">
+                            @if(!$donations->isEmpty())
+
                             @foreach($donations as $donation)
                             <div class="row" style="padding-bottom: 15px; padding-top:15px; border-bottom: 1px dotted silver">
                                 <div class="col-md-4 col-xs-4">
@@ -57,6 +59,9 @@
                                 </div>
                             </div>
                             @endforeach
+                            @else
+                                <div class="alert alert-warning">No data found</div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -70,10 +75,11 @@
                             </div>
                         </div>
                         <div class="card-body">
+                            @if(!$takes->isEmpty())
                             @foreach($takes as $taken)
                                 <div class="row" style="padding-bottom: 15px; padding-top:15px; border-bottom: 1px dotted silver">
                                     <div class="col-md-4 col-xs-4">
-                                        <p class="card-title">{{Carbon\Carbon::parse($donation->created_at)->format('d F Y')}}</p>
+                                        <p class="card-title">{{Carbon\Carbon::parse($taken->created_at)->format('d F Y')}}</p>
                                     </div>
                                     <div class="col-md-4 col-xs-4">
                                         <p class="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$taken->bloodRequest->union->name.' , '.$taken->bloodRequest->union->postOffice->policeStation->name.' , '.$taken->bloodRequest->union->postOffice->policeStation->district->name}}</p>
@@ -85,6 +91,9 @@
                                     </div>
                                 </div>
                             @endforeach
+                                @else
+                                    <div class="alert alert-warning">No data found</div>
+                                @endif
                         </div>
                     </div>
                 </div>
